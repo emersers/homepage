@@ -57,7 +57,7 @@ const getWeatherData = async () => {
     if (!mainKey) {
       console.log("未配置，使用备用天气接口");
       const result = await getOtherWeather();
-      console.log(result);
+      // console.log(result);
       const data = result.result;
       weatherData.adCode = {
         city: data.city.City || "未知地区",
@@ -72,7 +72,7 @@ const getWeatherData = async () => {
     } else {
       // 获取 Adcode
       const adCode = await getAdcode(mainKey);
-      console.log(adCode);
+      // console.log(adCode);
       if (adCode.infocode !== "10000") {
         throw "地区查询失败";
       }
